@@ -1,7 +1,7 @@
 package objOrientProgr.exercisePoly.vectorPoly;
 
-import objOrientProgr.exercisePoly.vectorPoly.eccezioni.NegativeExponentException;
-import objOrientProgr.exercisePoly.vectorPoly.eccezioni.degreeNotFoundException;
+import objOrientProgr.exercisePoly.vectorPoly.exceptions.NegativeExponentException;
+import objOrientProgr.exercisePoly.vectorPoly.exceptions.degreeNotFoundException;
 
 public class PolyTest {
     public static void main(String[] args) throws NegativeExponentException, degreeNotFoundException {

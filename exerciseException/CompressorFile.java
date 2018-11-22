@@ -1,7 +1,7 @@
 package objOrientProgr.exerciseException;
 
-import objOrientProgr.exerciseException.exception.CantBeNullException;
-import objOrientProgr.exerciseException.exception.NoSuchFileException;
+import objOrientProgr.exerciseException.exceptions.CantBeNullException;
+import objOrientProgr.exerciseException.exceptions.NoSuchFileException;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.file.FileSystems;

@@ -1,10 +1,9 @@
 package objOrientProgr.exercisePoly.vectorPoly;
 
 import java.util.Iterator;
-import java.util.List;
 import java.util.Objects;
 import java.util.Vector;
-import objOrientProgr.exercisePoly.vectorPoly.eccezioni.*;
+import objOrientProgr.exercisePoly.vectorPoly.exceptions.*;
 
 public class Poly {
 

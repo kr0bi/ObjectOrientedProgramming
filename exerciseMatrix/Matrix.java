@@ -1,6 +1,6 @@
 package objOrientProgr.exerciseMatrix;
 
-import objOrientProgr.exerciseMatrix.exception.*;
+import objOrientProgr.exerciseMatrix.exceptions.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Vector;
@@ -62,9 +62,9 @@ public class Matrix {
      *
      * @param rows    numero di righe da inserire
      * @param columns numero di colonne da inserire
-     * @throws dimensionsException viene tirata l'eccezione se il numero di righe o dimensione e' <= 0
+     * @throws DimensionsException viene tirata l'eccezione se il numero di righe o dimensione e' <= 0
      */
-    public Matrix(int rows, int columns) throws dimensionsException {
+    public Matrix(int rows, int columns) throws DimensionsException {
         doMatrices(rows, columns);
     }
 
@@ -73,9 +73,9 @@ public class Matrix {
      *
      * @param rows    numero di righe da inserire
      * @param columns numero di colonne da inserire
-     * @throws dimensionsException viene tirata l'eccezione se il numero di righe o dimensione e' <= 0
+     * @throws DimensionsException viene tirata l'eccezione se il numero di righe o dimensione e' <= 0
      */
-    private void doMatrices(int rows, int columns) throws dimensionsException {
+    private void doMatrices(int rows, int columns) throws DimensionsException {
         checkDimensions(rows, columns);
         inizializeVariables(rows, columns);
     }
@@ -85,11 +85,11 @@ public class Matrix {
      *
      * @param rows    numero di righe
      * @param columns numero di colonne
-     * @throws dimensionsException nel caso che rows e columns siano <= 0 tira l'eccezione
+     * @throws DimensionsException nel caso che rows e columns siano <= 0 tira l'eccezione
      */
-    private void checkDimensions(int rows, int columns) throws dimensionsException {
+    private void checkDimensions(int rows, int columns) throws DimensionsException {
         if (rows <= 0 || columns <= 0) {
-            throw new dimensionsException("La dimensione delle righe e delle colonne deve essere maggiore di zero");
+            throw new DimensionsException("La dimensione delle righe e delle colonne deve essere maggiore di zero");
         }
     }
 
@@ -146,10 +146,10 @@ public class Matrix {
      * @param rows    numero di righe della matrice
      * @param columns numero di colonne della matrice
      * @param dato    array che viene copiato per righe
-     * @throws columnsIndexOutOfBoundsException se il numero di colonne della matrice e' minore
+     * @throws ColumnsIndexOutOfBoundsException se il numero di colonne della matrice e' minore
      *                                          della lunghezza del dato viene tirata l'eccezione
      */
-    public Matrix(int rows, int columns, int[] dato) throws columnsIndexOutOfBoundsException {
+    public Matrix(int rows, int columns, int[] dato) throws ColumnsIndexOutOfBoundsException {
         doMatricesWork(rows, columns, dato);
     }
 
@@ -161,10 +161,10 @@ public class Matrix {
      * @param rows    numero di righe
      * @param columns numero di colonne
      * @param dato    vettore che viene inserito nella matrice
-     * @throws columnsIndexOutOfBoundsException se il numero di colonne della matrice e' minore
+     * @throws ColumnsIndexOutOfBoundsException se il numero di colonne della matrice e' minore
      *                                          della lunghezza del dato viene tirata l'eccezione
      */
-    private void doMatricesWork(int rows, int columns, int[] dato) throws columnsIndexOutOfBoundsException {
+    private void doMatricesWork(int rows, int columns, int[] dato) throws ColumnsIndexOutOfBoundsException {
         checkColumnsIndex(rows, columns, dato);
         inizializeVariablesWithArray(rows, columns, dato);
     }
@@ -176,13 +176,13 @@ public class Matrix {
      * @param rows    numero di righe
      * @param columns numero di colonne
      * @param dato    vettore che deve essre controllato
-     * @throws columnsIndexOutOfBoundsException eccezione che viene tirata quando il numero di colonne e' minore
+     * @throws ColumnsIndexOutOfBoundsException eccezione che viene tirata quando il numero di colonne e' minore
      *                                          della lunghezza del dato
      */
-    private void checkColumnsIndex(int rows, int columns, int[] dato) throws columnsIndexOutOfBoundsException {
+    private void checkColumnsIndex(int rows, int columns, int[] dato) throws ColumnsIndexOutOfBoundsException {
         int lengthDato = dato.length;
         if (columns < lengthDato) {
-            throw new columnsIndexOutOfBoundsException("Il numero di dati da copiare e' maggiore del numero di colonne possibili");
+            throw new ColumnsIndexOutOfBoundsException("Il numero di dati da copiare e' maggiore del numero di colonne possibili");
         }
     }
 
@@ -235,11 +235,11 @@ public class Matrix {
      * @param rows           numero di righe della matrice in cui inserire il dato
      * @param columns        numero di colonne della matrice in cui inserire il dato
      * @param datoDaInserire dato da inserire all'interno della matrice
-     * @throws incompatibleInsertMatrixException se vengono inserite delle coordinate che non
+     * @throws IncompatibleInsertMatrixException se vengono inserite delle coordinate che non
      *                                           esistono all'interno della matrice viene tirata questa eccezione
      *                                           MODIFIES: this con il valore aggiunto alla matrice
      */
-    public void insert(int rows, int columns, int datoDaInserire) throws incompatibleInsertMatrixException {
+    public void insert(int rows, int columns, int datoDaInserire) throws IncompatibleInsertMatrixException {
         doInsertWork(rows, columns, datoDaInserire);
     }
 
@@ -249,9 +249,9 @@ public class Matrix {
      * @param rows           riga in cui andare a inserire il valore della matrice
      * @param columns        colonna in cui andare a inserire il valore della matrice
      * @param datoDaInserire dato da inserire all'interno della matrice
-     * @throws incompatibleInsertMatrixException se non esistono le coordinate della matrice viene tirata questa eccezione
+     * @throws IncompatibleInsertMatrixException se non esistono le coordinate della matrice viene tirata questa eccezione
      */
-    private void doInsertWork(int rows, int columns, int datoDaInserire) throws incompatibleInsertMatrixException {
+    private void doInsertWork(int rows, int columns, int datoDaInserire) throws IncompatibleInsertMatrixException {
         assert (checkInvariante()) : "Invariante non valida";
         checkMatrixCompatibility(rows, columns);
         setValueOnMatrix(rows, columns, datoDaInserire);
@@ -261,12 +261,12 @@ public class Matrix {
      * checkMatrixCompatibility: verifica che il numero di righe e colonne inserite siano compatibili con quelle della matrice
      * @param rows riga da controllare
      * @param columns colonna da controllare
-     * @throws incompatibleInsertMatrixException se il numero di righe o colonne inserito e' maggiore
+     * @throws IncompatibleInsertMatrixException se il numero di righe o colonne inserito e' maggiore
      * della grandezza della matrice viene tirata una eccezione
      */
-    private void checkMatrixCompatibility(int rows, int columns) throws incompatibleInsertMatrixException {
+    private void checkMatrixCompatibility(int rows, int columns) throws IncompatibleInsertMatrixException {
         if (righe < rows || colonne < columns) {
-            throw new incompatibleInsertMatrixException("Numero di righe o numero di colonne piu' grande della matrice");
+            throw new IncompatibleInsertMatrixException("Numero di righe o numero di colonne piu' grande della matrice");
         }
     }
 
@@ -284,24 +284,24 @@ public class Matrix {
     /**
      * multiply: moltiplica this per la matrice
      * @param m matrice da moltiplicare
-     * @throws incompatibleMultiplyMatrixException se il numero di colonne della matrice iniziale e' differente dal numero di righe della
+     * @throws IncompatibleMultiplyMatrixException se il numero di colonne della matrice iniziale e' differente dal numero di righe della
      * seconda matrice viene tirata un'eccezione
-     * @throws incompatibleInsertMatrixException se le coordinate riga/colonna della matrice moltplicata sono sbagliate
-     * @throws dimensionsException se vengono inserite righe/colonne <= 0 tira questa eccezione
+     * @throws IncompatibleInsertMatrixException se le coordinate riga/colonna della matrice moltplicata sono sbagliate
+     * @throws DimensionsException se vengono inserite righe/colonne <= 0 tira questa eccezione
      */
-    public void multiply(Matrix m) throws incompatibleMultiplyMatrixException, incompatibleInsertMatrixException, dimensionsException {
+    public void multiply(Matrix m) throws IncompatibleMultiplyMatrixException, IncompatibleInsertMatrixException, DimensionsException {
         doMultiplyWork(m);
     }
 
     /**
      * doMultiplyWork: verifica che possa avvenire la moltiplicazione e la esegue
      * @param m matrice da moltiplicare
-     * @throws incompatibleMultiplyMatrixException se il numero di colonne della matrice iniziale e' differente dal numero di righe della
+     * @throws IncompatibleMultiplyMatrixException se il numero di colonne della matrice iniziale e' differente dal numero di righe della
      * seconda matrice viene tirata un'eccezione
-     * @throws incompatibleInsertMatrixException se le coordinate riga/colonna della matrice moltplicata sono sbagliate
-     * @throws dimensionsException se vengono inserite righe/colonne <= 0 tira questa eccezione
+     * @throws IncompatibleInsertMatrixException se le coordinate riga/colonna della matrice moltplicata sono sbagliate
+     * @throws DimensionsException se vengono inserite righe/colonne <= 0 tira questa eccezione
      */
-    private void doMultiplyWork(Matrix m) throws incompatibleInsertMatrixException, incompatibleMultiplyMatrixException, dimensionsException {
+    private void doMultiplyWork(Matrix m) throws IncompatibleInsertMatrixException, IncompatibleMultiplyMatrixException, DimensionsException {
         checkMultiplyDimension(m);
         Matrix m3 = multiplyMatrices(m);
         copiaMatrice(m3);
@@ -310,13 +310,13 @@ public class Matrix {
     /**
      * checkMultiplyDimension: verifica che possa avvenire la moltiplicazione
      * @param m matrice da moltiplicare
-     * @throws incompatibleMultiplyMatrixException le dimensioni della colonna della
+     * @throws IncompatibleMultiplyMatrixException le dimensioni della colonna della
      *                                             prima matrice e le dimensioni della riga della seconda matrice
      *                                             sono incompatibili
      */
-    private void checkMultiplyDimension(Matrix m) throws incompatibleMultiplyMatrixException {
+    private void checkMultiplyDimension(Matrix m) throws IncompatibleMultiplyMatrixException {
         if (this.getColonne() != m.getRighe()) {
-            throw new incompatibleMultiplyMatrixException("La colonna della prima matrice e' diversa dalle righe dalla seconda matrice");
+            throw new IncompatibleMultiplyMatrixException("La colonna della prima matrice e' diversa dalle righe dalla seconda matrice");
         }
     }
 
@@ -324,11 +324,11 @@ public class Matrix {
      * multiplyMatrices: moltiplica la matrice
      * @param m matrice da moltiplicare
      * @return  la matrice moltiplicata
-     * @throws dimensionsException se si prova a inserire righe/colonne <= 0
-     * @throws incompatibleInsertMatrixException se si prova a mettere coordinate non esistenti all'interno della matrice
+     * @throws DimensionsException se si prova a inserire righe/colonne <= 0
+     * @throws IncompatibleInsertMatrixException se si prova a mettere coordinate non esistenti all'interno della matrice
      */
     @NotNull
-    private Matrix multiplyMatrices(Matrix m) throws dimensionsException, incompatibleInsertMatrixException {
+    private Matrix multiplyMatrices(Matrix m) throws DimensionsException, IncompatibleInsertMatrixException {
         assert (checkInvariante()) : "Invariante non valida";
         Matrix m3 = new Matrix(getRighe(), m.getColonne());
         for (int i = 0; i < getRighe(); i++) {
@@ -359,9 +359,9 @@ public class Matrix {
     /**
      * copiaMatrice: copia la matrice in this
      * @param m3 matrice da copiare
-     * @throws incompatibleInsertMatrixException se si prova a copiare una matrice che ha dimensione differenti di this
+     * @throws IncompatibleInsertMatrixException se si prova a copiare una matrice che ha dimensione differenti di this
      */
-    private void copiaMatrice(Matrix m3) throws incompatibleInsertMatrixException {
+    private void copiaMatrice(Matrix m3) throws IncompatibleInsertMatrixException {
         assert (checkInvariante()) : "Invariante non valida";
         for (int i = 0; i < getRighe(); i++) {
             for (int j = 0; j < getColonne(); j++) {
@@ -374,18 +374,18 @@ public class Matrix {
      * Esegue sulla matrice la traposta
      * MODIFIES: this con la matrice trasposta this
      */
-    public void transpose() throws incompatibleInsertMatrixException, dimensionsException {
+    public void transpose() throws IncompatibleInsertMatrixException, DimensionsException {
         doTranspose();
     }
 
-    private void doTranspose() throws incompatibleInsertMatrixException, dimensionsException {
+    private void doTranspose() throws IncompatibleInsertMatrixException, DimensionsException {
         assert (checkInvariante()) : "Invariante non valida";
         Matrix result = calculateTraspose();
         copiaMatrice(result);
     }
 
     @NotNull
-    private Matrix calculateTraspose() throws dimensionsException, incompatibleInsertMatrixException {
+    private Matrix calculateTraspose() throws DimensionsException, IncompatibleInsertMatrixException {
         assert (checkInvariante()) : "Invariante non valida";
         Matrix result = new Matrix(getColonne(), getRighe());
         for (int i = 0; i < result.getRighe(); i++) {
@@ -402,24 +402,24 @@ public class Matrix {
      *
      * @param m la seconda matrice da sommare
      *          MODIFIES: this con la matrice sommata tra le prime due (this + m)
-     * @throws incompatibleSumMatrixException le dimensioni delle matrici non sono identiche
+     * @throws IncompatibleSumMatrixException le dimensioni delle matrici non sono identiche
      */
-    public void add(Matrix m) throws incompatibleSumMatrixException, dimensionsException, incompatibleInsertMatrixException {
+    public void add(Matrix m) throws IncompatibleSumMatrixException, DimensionsException, IncompatibleInsertMatrixException {
         doAdd(m);
     }
 
-    private void doAdd(Matrix m) throws incompatibleSumMatrixException, incompatibleInsertMatrixException, dimensionsException {
+    private void doAdd(Matrix m) throws IncompatibleSumMatrixException, IncompatibleInsertMatrixException, DimensionsException {
         checkSumDimension(m);
         calculateAdd(m);
     }
 
-    private void checkSumDimension(Matrix m) throws incompatibleSumMatrixException {
+    private void checkSumDimension(Matrix m) throws IncompatibleSumMatrixException {
         if (this.getColonne() != m.getRighe()) {
-            throw new incompatibleSumMatrixException("La dimensione delle due matrici e' differente");
+            throw new IncompatibleSumMatrixException("La dimensione delle due matrici e' differente");
         }
     }
 
-    private void calculateAdd(Matrix m) throws dimensionsException, incompatibleInsertMatrixException {
+    private void calculateAdd(Matrix m) throws DimensionsException, IncompatibleInsertMatrixException {
         assert (checkInvariante()) : "Invariante non valida";
         Matrix m3 = new Matrix(getRighe(), getColonne());
         for (int i = 0; i < getRighe(); i++) {
@@ -438,18 +438,18 @@ public class Matrix {
      * @param x scalare da moltiplicare alla matrice
      *          MODIFIES: this moltiplicata allo scalare
      */
-    public void scalarProduct(int x) throws incompatibleInsertMatrixException, dimensionsException {
+    public void scalarProduct(int x) throws IncompatibleInsertMatrixException, DimensionsException {
         doScalarProduct(x);
     }
 
-    private void doScalarProduct(int x) throws incompatibleInsertMatrixException, dimensionsException {
+    private void doScalarProduct(int x) throws IncompatibleInsertMatrixException, DimensionsException {
         assert (checkInvariante()) : "Invariante non valida";
         Matrix m3 = calculateScalarProduct(x);
         copiaMatrice(m3);
     }
 
     @NotNull
-    private Matrix calculateScalarProduct(int x) throws incompatibleInsertMatrixException, dimensionsException {
+    private Matrix calculateScalarProduct(int x) throws IncompatibleInsertMatrixException, DimensionsException {
         assert (checkInvariante()) : "Invariante non valida";
         Matrix m3 = new Matrix(getRighe(), getColonne());
         for (int i = 0; i < getRighe(); i++) {

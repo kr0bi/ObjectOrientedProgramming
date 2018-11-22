@@ -1,4 +1,4 @@
-package objOrientProgr.exerciseException.exception;
+package objOrientProgr.exerciseException.exceptions;
 
 public class NoSuchFileException extends Exception {
     public NoSuchFileException(){

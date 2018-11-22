@@ -2,7 +2,7 @@ package objOrientProgr.exerciseMatrix;
 
 import static objOrientProgr.exerciseMatrix.Utilities.viewMatrices;
 
-public class MatricesStatic {
+public class MatrixStatic {
     /**
      * The mission of this class is to provide a number of * standalone procedures that can be useful for manipulating * n x m matrices of floats.
      **/

@@ -1,13 +1,13 @@
 package objOrientProgr.exerciseMatrix;
 
-import objOrientProgr.exerciseMatrix.exception.*;
+import objOrientProgr.exerciseMatrix.exceptions.*;
 
 import java.util.Vector;
 
-public class MatricesTest {
-    public static void test() throws dimensionsException,
-            columnsIndexOutOfBoundsException, incompatibleSumMatrixException,
-            incompatibleInsertMatrixException, incompatibleMultiplyMatrixException{
+public class MatrixTest {
+    public static void test() throws DimensionsException,
+            ColumnsIndexOutOfBoundsException, IncompatibleSumMatrixException,
+            IncompatibleInsertMatrixException, IncompatibleMultiplyMatrixException {
         Matrix theMatrix = new Matrix(3, 10);
         theMatrix.viewMatrix();
         Matrix theSecondMatrix = new Matrix(4, 4, new int[]{1, 2, 3, 4});
@@ -48,9 +48,9 @@ public class MatricesTest {
             System.out.println(v.toString());
         }
     }
-    public static void main(String[] args)  throws dimensionsException,
-            columnsIndexOutOfBoundsException, incompatibleSumMatrixException,
-            incompatibleInsertMatrixException, incompatibleMultiplyMatrixException{
+    public static void main(String[] args)  throws DimensionsException,
+            ColumnsIndexOutOfBoundsException, IncompatibleSumMatrixException,
+            IncompatibleInsertMatrixException, IncompatibleMultiplyMatrixException {
         test();
 
     }
