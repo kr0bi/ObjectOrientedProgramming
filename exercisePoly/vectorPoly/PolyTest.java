@@ -34,6 +34,9 @@ public class PolyTest {
         System.out.println(thePoly7.equals(thePoly4));
         System.out.println(thePoly7.equals(thePoly));
 
+        thePoly2.viewPoly();
+        thePoly3.viewPoly();
+        System.out.println("------------");
         thePoly2.multiply(thePoly3).viewPoly();
         thePoly3.multiply(thePoly2).viewPoly();
         System.out.println("------------");
@@ -50,7 +53,7 @@ public class PolyTest {
         thePoly5 = thePoly5.add(new Poly(5,2));
         thePoly5.viewPoly();
 
-        Poly ciao = new Poly(5, 3);
+        Poly ciao = new Poly(5, 0);
         ciao.viewPoly();
 
     }
