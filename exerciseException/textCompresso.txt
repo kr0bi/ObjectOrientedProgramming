@@ -1,0 +1,18 @@
+ciao   a   tutti
+sono   daniele
+questa   e'   un   test
+di   scrittura   su   un   file
+CIAO   PROVA
+
+ci   sono   43   spazi   in   questa   riga                                                                                                                                 .
+Cielo   blue
+
+Sono   una   nuova   stringa
+
+Sono   la   seconda   nuova   stringa
+ciao   sono   una   nuova   prova
+ciao   due
+
+ciao   tre
+ciao   sono   davide
+bel   meme   vediamo   se   funziona
