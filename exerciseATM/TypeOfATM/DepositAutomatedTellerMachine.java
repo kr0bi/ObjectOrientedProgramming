@@ -1,0 +1,4 @@
+package objOrientProgr.exerciseATM.TypeOfATM;
+
+public class DepositAutomatedTellerMachine extends StandardAutomatedTellerMachineImplementation{
+}

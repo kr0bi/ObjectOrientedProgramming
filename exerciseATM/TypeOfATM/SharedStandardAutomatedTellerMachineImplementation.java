@@ -1,0 +1,4 @@
+package objOrientProgr.exerciseATM.TypeOfATM;
+
+public class SharedStandardAutomatedTellerMachineImplementation extends StandardAutomatedTellerMachineImplementation {
+}
