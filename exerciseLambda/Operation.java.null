@@ -1,0 +1,63 @@
+package objOrientProgr.exerciseLambda;
+
+import java.util.function.BiFunction;
+import java.util.function.Function;
+
+public class Operation {
+
+    public static void main(String[] args) {
+        int value = 3;
+        System.out.format("value: %d\n", value);
+        value = increment(3);
+        System.out.format("value: %d\n", value);
+        value = add(3,4);
+        System.out.format("value: %d\n", value);
+        value = multiply(4,3);
+        System.out.format("value: %d\n", value);
+        value = pow(2,3);
+        System.out.format("value: %d\n", value);
+
+    }
+    public static int increment (int value){
+        BiFunction<Integer, Integer, Integer> inc = ((x,y) -> y+1);
+        return inc.apply(0, value);
+    }
+
+    public static int H (Function<Integer, Integer> f, BiFunction<Integer, Integer, Integer> g, int a, int b){
+        if (b==0){
+            return f.apply(a);
+        } else {
+            return g.apply(a, H(f,g, a, (b - 1)));
+        }
+    }
+    public static int add (int a, int b){
+        return addRec(a,b)
+    }
+    private static int addRec (Function<Integer, Integer> H, int a, int b ){
+        H(x->x, increment())
+    }
+    /**
+     * (define s2 (lambda (u v) (+ v 1)))
+     * (define H
+     *  (lambda (f g)   ;procedure da numero -> numero
+     *      (lambda (a b) ;val: numeri interi
+     *          (if (= b 0)
+     *              (f a)
+     *              (g a ((H f g) a (- b 1))))
+            )))
+     (define add (H (lambda (x) x)
+                    s2))
+     (define mul (H (lambda (x) 0) add))
+     (define pow (H (lambda (x) 1) mul))
+     */
+
+    /*Function<Integer, String> intToString = Object::toString;
+        Function<String, String> quote = s -> "'" + s + "'";
+
+        Function<Integer, String> quoteIntToString = quote.compose(intToString);
+        if ("'5'".equals(quoteIntToString.apply(5))){
+            System.out.println(true);
+        } else{
+            System.out.println(false);
+        }*/
+}
