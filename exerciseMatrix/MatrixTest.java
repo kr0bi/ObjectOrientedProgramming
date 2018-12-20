@@ -47,6 +47,43 @@ public class MatrixTest {
             Vector<Integer> v = theThirdMatrix.extractVector(Matrix.Spaces.ROW, i);
             System.out.println(v.toString());
         }
+        Matrix prima=new Matrix(3,3);
+        prima.insert(0, 0,0);
+        prima.insert(0, 1,0);
+        prima.insert(0, 2,1);
+        prima.insert(1, 0,0);
+        prima.insert(1, 1,1);
+        prima.insert(1, 2,-1);
+        prima.insert(2, 0,1);
+        prima.insert(2, 1,-1);
+        prima.insert(2, 2,0);
+
+        Matrix seconda=new Matrix(3,3);
+        seconda.insert(0, 0,0);
+        seconda.insert(0, 1,2);
+        seconda.insert(0, 2,1);
+        seconda.insert(1, 0,1);
+        seconda.insert(1, 1,-4);
+        seconda.insert(1, 2,0);
+        seconda.insert(2, 0,3);
+        seconda.insert(2, 1,0);
+        seconda.insert(2, 2,0);
+
+        Matrix terza=new Matrix(3,3);
+        terza.insert(0, 0,1);
+        terza.insert(0, 1,1);
+        terza.insert(0, 2,1);
+        terza.insert(1, 0,1);
+        terza.insert(1, 1,1);
+        terza.insert(1, 2,0);
+        terza.insert(2, 0,1);
+        terza.insert(2, 1,0);
+        terza.insert(2, 2,0);
+
+        prima.multiply(seconda);
+        prima.viewMatrix();
+        prima.multiply(terza);
+        prima.viewMatrix();
     }
     public static void main(String[] args)  throws DimensionsException,
             ColumnsIndexOutOfBoundsException, IncompatibleSumMatrixException,

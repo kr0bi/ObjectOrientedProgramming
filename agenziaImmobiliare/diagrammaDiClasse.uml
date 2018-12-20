@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="982.9542297979799" y="480.0">objOrientProgr.agenziaImmobiliare.CasaSchiera</node>
+    <node x="677.0000000000001" y="619.0">objOrientProgr.agenziaImmobiliare.RegistroAbitazioni</node>
+    <node x="1530.20422979798" y="480.0">objOrientProgr.agenziaImmobiliare.CasaSingola</node>
+    <node x="1135.45422979798" y="668.0">objOrientProgr.agenziaImmobiliare.AbitazioneFactory</node>
+    <node x="1515.95422979798" y="894.5">objOrientProgr.agenziaImmobiliare.ClienteImplementazione</node>
+    <node x="59.5" y="1043.0">objOrientProgr.agenziaImmobiliare.Proprietario</node>
+    <node x="0.0" y="1124.0">objOrientProgr.agenziaImmobiliare.ProprietarioImplementazione</node>
+    <node x="223.56786616161617" y="468.0">objOrientProgr.agenziaImmobiliare.Filtro</node>
+    <node x="0.0" y="668.0">objOrientProgr.agenziaImmobiliare.PrenotazioneFallitaException</node>
+    <node x="1275.3636363636365" y="0.0">objOrientProgr.agenziaImmobiliare.KindOfCaldaia</node>
+    <node x="795.1180555555557" y="480.0">objOrientProgr.agenziaImmobiliare.Registro</node>
+    <node x="1681.20422979798" y="432.0">objOrientProgr.agenziaImmobiliare.Appartamento</node>
+    <node x="1551.45422979798" y="680.0">objOrientProgr.agenziaImmobiliare.Cliente</node>
+    <node x="442.0347222222223" y="822.0">objOrientProgr.agenziaImmobiliare.Agenzia</node>
+    <node x="724.1136363636364" y="225.0">objOrientProgr.agenziaImmobiliare.Abitazione</node>
+    <node x="1339.20422979798" y="432.0">objOrientProgr.agenziaImmobiliare.KindOfAbitazione</node>
+    <node x="347.0000000000001" y="655.5">objOrientProgr.agenziaImmobiliare.FiltroImplementazione</node>
+    <node x="1165.20422979798" y="480.0">objOrientProgr.agenziaImmobiliare.DimoraDiLusso</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="objOrientProgr.agenziaImmobiliare.Agenzia" target="objOrientProgr.agenziaImmobiliare.Cliente">
+      <point x="182.0" y="-88.0" />
+      <point x="851.5347222222223" y="802.0" />
+      <point x="1575.45422979798" y="802.0" />
+      <point x="-24.0" y="15.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.AbitazioneFactory" target="objOrientProgr.agenziaImmobiliare.DimoraDiLusso">
+      <point x="-33.0" y="-27.5" />
+      <point x="1300.45422979798" y="599.0" />
+      <point x="1242.20422979798" y="599.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.Agenzia" target="objOrientProgr.agenziaImmobiliare.RegistroAbitazioni">
+      <point x="91.0" y="-88.0" />
+      <point x="760.5347222222223" y="792.0" />
+      <point x="868.5000000000001" y="792.0" />
+      <point x="0.0" y="76.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.RegistroAbitazioni" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="-127.66666666666674" y="-76.5" />
+      <point x="740.8333333333334" y="599.0" />
+      <point x="771.1136363636364" y="599.0" />
+      <point x="771.1136363636364" y="412.0" />
+      <point x="866.4772727272729" y="412.0" />
+      <point x="-31.636363636363512" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.Appartamento" target="objOrientProgr.agenziaImmobiliare.KindOfCaldaia">
+      <point x="87.0" y="-63.5" />
+      <point x="1942.20422979798" y="200.0" />
+      <point x="1420.8636363636365" y="200.0" />
+      <point x="48.5" y="87.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.Abitazione" target="objOrientProgr.agenziaImmobiliare.KindOfCaldaia">
+      <point x="0.0" y="-63.5" />
+      <point x="898.1136363636364" y="200.0" />
+      <point x="1323.8636363636365" y="200.0" />
+      <point x="-48.5" y="87.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.AbitazioneFactory" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="-165.0" y="-27.5" />
+      <point x="1168.45422979798" y="589.0" />
+      <point x="972.4542297979799" y="589.0" />
+      <point x="972.4542297979799" y="412.0" />
+      <point x="929.7499999999999" y="412.0" />
+      <point x="31.636363636363512" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.ProprietarioImplementazione" target="objOrientProgr.agenziaImmobiliare.Proprietario">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.Agenzia" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="0.0" y="-88.0" />
+      <point x="669.5347222222223" y="802.0" />
+      <point x="666.5000000000001" y="802.0" />
+      <point x="666.5000000000001" y="402.0" />
+      <point x="834.8409090909091" y="402.0" />
+      <point x="-63.27272727272725" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.DimoraDiLusso" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="0.0" y="-15.5" />
+      <point x="1242.20422979798" y="392.0" />
+      <point x="993.0227272727274" y="392.0" />
+      <point x="94.90909090909099" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.RegistroAbitazioni" target="objOrientProgr.agenziaImmobiliare.Registro">
+      <point x="0.0" y="-76.5" />
+      <point x="868.5000000000001" y="599.0" />
+      <point x="848.1180555555557" y="599.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.AbitazioneFactory" target="objOrientProgr.agenziaImmobiliare.CasaSingola">
+      <point x="99.0" y="-27.5" />
+      <point x="1432.45422979798" y="589.0" />
+      <point x="1595.70422979798" y="589.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.AbitazioneFactory" target="objOrientProgr.agenziaImmobiliare.Appartamento">
+      <point x="165.0" y="-27.5" />
+      <point x="1498.45422979798" y="599.0" />
+      <point x="1855.20422979798" y="599.0" />
+      <point x="0.0" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.AbitazioneFactory" target="objOrientProgr.agenziaImmobiliare.CasaSchiera">
+      <point x="-99.0" y="-27.5" />
+      <point x="1234.45422979798" y="579.0" />
+      <point x="1047.95422979798" y="579.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.AbitazioneFactory" target="objOrientProgr.agenziaImmobiliare.KindOfAbitazione">
+      <point x="33.0" y="-27.5" />
+      <point x="1366.45422979798" y="599.0" />
+      <point x="1424.70422979798" y="599.0" />
+      <point x="0.0" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.Agenzia" target="objOrientProgr.agenziaImmobiliare.FiltroImplementazione">
+      <point x="-91.0" y="-88.0" />
+      <point x="578.5347222222223" y="802.0" />
+      <point x="501.5000000000001" y="802.0" />
+      <point x="0.0" y="40.0" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.FiltroImplementazione" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="103.0" y="-40.0" />
+      <point x="604.5000000000001" y="599.0" />
+      <point x="591.533143939394" y="599.0" />
+      <point x="591.533143939394" y="392.0" />
+      <point x="803.2045454545454" y="392.0" />
+      <point x="-94.90909090909099" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.Filtro" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="0.0" y="-27.5" />
+      <point x="378.06786616161617" y="372.0" />
+      <point x="739.9318181818181" y="372.0" />
+      <point x="-158.18181818181824" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.FiltroImplementazione" target="objOrientProgr.agenziaImmobiliare.Filtro">
+      <point x="-103.0" y="-40.0" />
+      <point x="398.5000000000001" y="599.0" />
+      <point x="378.06786616161617" y="599.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.Agenzia" target="objOrientProgr.agenziaImmobiliare.PrenotazioneFallitaException">
+      <point x="-182.0" y="-88.0" />
+      <point x="487.5347222222223" y="802.0" />
+      <point x="163.5" y="802.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.CasaSingola" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="0.0" y="-15.5" />
+      <point x="1595.70422979798" y="382.0" />
+      <point x="1024.659090909091" y="382.0" />
+      <point x="126.5454545454545" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.ClienteImplementazione" target="objOrientProgr.agenziaImmobiliare.Cliente">
+      <point x="0.0" y="-15.5" />
+      <point x="24.0" y="15.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.CasaSchiera" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="0.0" y="-15.5" />
+      <point x="1047.95422979798" y="402.0" />
+      <point x="961.3863636363636" y="402.0" />
+      <point x="63.27272727272725" y="63.5" />
+    </edge>
+    <edge source="objOrientProgr.agenziaImmobiliare.Appartamento" target="objOrientProgr.agenziaImmobiliare.Abitazione">
+      <point x="-87.0" y="-63.5" />
+      <point x="1768.20422979798" y="372.0" />
+      <point x="1056.2954545454545" y="372.0" />
+      <point x="158.18181818181802" y="63.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5983106522759268" x="1055.5" y="587.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
