@@ -1,4 +1,4 @@
-package objOrientProgr.agenziaImmobiliare;
+package objOrientProgr.agenziaImmobiliare.Eccezioni;
 
 public class PrenotazioneFallitaException extends Exception {
     public PrenotazioneFallitaException(String s){

@@ -1,20 +1,28 @@
 package objOrientProgr.agenziaImmobiliare;
 
-import java.util.Date;
+import objOrientProgr.agenziaImmobiliare.Eccezioni.PrenotazioneFallitaException;
+import objOrientProgr.agenziaImmobiliare.Enum.KindOfAbitazione;
+import objOrientProgr.agenziaImmobiliare.Factory.AbitazioneFactory;
+import objOrientProgr.agenziaImmobiliare.Interface.Abitazione;
+import objOrientProgr.agenziaImmobiliare.Interface.Filtro;
+
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Agenzia {
     RegistroAbitazioni regAbitazioni;
+
+    //todo creare in qualche maniera la possibilita' di copiare questi oggetti
+    public Agenzia(RegistroAbitazioni reg){
+        regAbitazioni = reg;
+    }
+
     /**
      * calculateAveragePrice: calcola il prezzo medio di una lista di abitazioni in cui viene eseguito il filtro f
      * @param f filtro per la lista di abitazioni
      * @return prezzo medio della lista di abitazioni filtrate
      */
     public double calculateAveragePrice(Filtro f){
-        Stream<Abitazione> stream = regAbitazioni.estraiStreamAbitazione();
-        Stream<Abitazione> stream2 = stream.filter(f.test());
-        return stream2.mapToDouble(i->i.calculatePrice()).average().getAsDouble();
+        return f.setRegistroFiltrato(regAbitazioni).stream().mapToDouble(i->i.getPrezzoPubblicato()).average().getAsDouble();
     }
 
     /**
@@ -22,8 +30,8 @@ public class Agenzia {
      * @param f filtro per la lista di abitazioni
      * @return la lista di abitazioni filtrate
      */
-    public List<Abitazione> findAbitazione(FiltroImplementazione f){
-        return null;
+    public List<Abitazione> findAbitazione(Filtro f){
+        return f.setRegistroFiltrato(regAbitazioni);
     }
 
     /**
@@ -34,27 +42,32 @@ public class Agenzia {
      * @return "Prenotazione effettuata con successo!"
      * @throws PrenotazioneFallitaException se la prenotazione non e' andata a buon fine tira un'eccezione
      */
-    public String prenotaVisita(Abitazione theAbitazione, Date dataVisita, Cliente ilCliente) throws PrenotazioneFallitaException{
-        if (checkPrenotabilita(theAbitazione, dataVisita)){
+    /*public String prenotaVisita(int identificativoAbitazione, LocalDate data, int identificativoCliente )
+            throws PrenotazioneFallitaException{
+        if (checkPrenotabilita(identificativoAbitazione, data)){
             return "Prenotazione effettuata con successo!";
         } else {
             throw new PrenotazioneFallitaException("Prenotazione FALLITA!");
         }
     }
 
-    /**
+    *
      * checkPrenotabilita' verifica se l'abitazione e' disponibile per quella data
      * @param theAbitazione abitazione da verificare
      * @param dataVisita data da verificare
      * @return TRUE se e' prenotabile, FALSE se non lo e'
-     */
-    private boolean checkPrenotabilita(Abitazione theAbitazione, Date dataVisita){
-        return true;
-    }
+     *//*
+    private boolean checkPrenotabilita(int identificativoAbitazione, LocalDate data){
+        Filtro f = new FiltroImplementazione();
+        f = ((FiltroImplementazione) f).addPredicato(new Predicato().isThisTheRightAbitazione(identificativoAbitazione);
+        Abitazione risultato = f.setRegistroFiltrato(regAbitazioni).get(0);
+        Prenotazione thePrenotazione
+    }*/
 
     /**
      * creaAbitazione: inserisce una nuova abitazione all'interno della lista di abitazioni affittabili
      */
-    public void creaAbitazione(){
+    public void creaAbitazione (KindOfAbitazione tipoAbitazione, CaratteristicheCasa listaCaratteristiche){
+        regAbitazioni.aggiungiAbitazione(new AbitazioneFactory().createAbitazione(tipoAbitazione, listaCaratteristiche));
     }
 }

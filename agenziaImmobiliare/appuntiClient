@@ -1,0 +1,20 @@
+nuovo Cliente Daniele
+nuova Agenzia theAgenzia
+daniele vuole sapere dalla Agenzia il prezzo medio
+    in vendita dall'agenzia per le case a Udine
+        
+    daniele.askAgenzia(theAgenzia).calculateAverage(Filtro (case a Udine))
+
+daniele vuole trovare le abitazioni in vendita a Udine
+    
+    daniele.askAgenzia(theAgenzia).findAbitazione(Filtro (case a Udine))
+
+theAgenzia vuole identificare una certa abitazione in vendita e prenotare una visita in una certa data per un certo cliente
+
+    theAgenzia.prenotaVisita(Filtro f, data, cliente)
+
+theAgenzia vuole creare una nuova abitazione, avendo in input le sue caratteristiche
+    
+    theAgenzia.creaAbitazione(caratteristiche)
+
+
