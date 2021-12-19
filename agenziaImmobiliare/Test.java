@@ -41,7 +41,7 @@ public class Test {
         Proprietario Immo = new ProprietarioImplementazione("Immo Napoli", null);
         CaratteristicheCasa caratteristicheDue = new CaratteristicheCasa(tipiVaniSecondaCasa,
                 tipiVaniSecondaCasa.size(), KindOfClasseEfficienzaEnergetica.B, 0,
-                1, KindOfZonaCitta.URBANA, "Udine", "Via Immigrato 22",
+                1, KindOfZonaCitta.URBANA, "Udine", "Via XD 22",
                 Immo, 100.0, 50.0, null, 2, KindOfCaldaia.LEGNA);
         theAgenzia.creaAbitazione(KindOfAbitazione.DIMORA, caratteristicheDue);
 
